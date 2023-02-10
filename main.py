@@ -87,8 +87,8 @@ def main(args):
     print('std of each subject', SUB_STD)
 
 if __name__ == '__main__':
-  for session in range(1):
-     for sub in range(1):
+  for session in range(3):
+     for sub in range(15):
 
         parser = argparse.ArgumentParser()
 
@@ -124,7 +124,7 @@ if __name__ == '__main__':
         parser.add_argument('--batch_size', default=32, type=int, help='batch size')
         # Train parameters
         parser.add_argument('--pretrain', default=0, type=int, help='pretrain epochs, generation task only')
-        parser.add_argument('--epochs', default=50, type=int, help='the number of epochs')
+        parser.add_argument('--epochs', default=30, type=int, help='the number of epochs')
         parser.add_argument('--lr', default=1e-5, type=float, help='learning rate')
 
         parser.add_argument('--no_cuda', action='store_true')
@@ -132,7 +132,7 @@ if __name__ == '__main__':
         parser.add_argument('--n_layers', default=3, type=int,
                             help='the number of heads in the multi-head attention network')
         parser.add_argument('--n_attn_heads', default=6, type=int, help='the number of multi-head attention heads')
-        parser.add_argument('--dropout', default=0.6, type=float, help='the residual dropout value')
+        parser.add_argument('--dropout', default=0.7, type=float, help='the residual dropout value')
         # parser.add_argument('--dropout',        default=0.1,  type=float, help='the residual dropout value')
         parser.add_argument('--ffn_hidden', default=256, type=int,
                             help='the dimension of the feedforward network')
