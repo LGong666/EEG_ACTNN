@@ -77,7 +77,7 @@ class MultiHeadAttention(nn.Module):
         q = self.layer_norm(q)
         return q, attn
 
-class PositionwiseFeedForward(nn.Module):  ###### 用到了
+class PositionwiseFeedForward(nn.Module): 
     ''' A two-feed-forward-layer module '''
 
     def __init__(self, d_in, d_hid, dropout=0.1):  # d_in=d_model=310, d_inner=d_ff= args.ffn_hidden=512
@@ -216,7 +216,7 @@ class CorruptionLayer(nn.Module):
         return torch.mul(feature, bitmask)
 
 
-class TransformerEncoder(nn.Module):  # 用到了
+class TransformerEncoder(nn.Module): 
     """TransformerEncoder is a stack of N encoder layers.
 
     Args:
