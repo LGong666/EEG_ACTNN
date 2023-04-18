@@ -141,7 +141,6 @@ class Encoder(nn.Module):
             return enc_output, enc_slf_attn_list
         return enc_output,
 
-
 class CorruptionLayer(nn.Module):
     def __init__(self, device, corrupt_probability=0.1):
         super(CorruptionLayer, self).__init__()
@@ -151,7 +150,6 @@ class CorruptionLayer(nn.Module):
     def forward(self, feature):
         bitmask = torch.cuda.FloatTensor(feature.shape).uniform_() > self.corrupt_p
         return torch.mul(feature, bitmask)
-
 
 class TransformerEncoder(nn.Module): 
     """TransformerEncoder is a stack of N encoder layers.
@@ -196,7 +194,6 @@ class TransformerEncoder(nn.Module):
         self.relu = nn.ReLU()
 
         self.Linear1 = nn.Linear(128, 128)
-
 
     def forward(self, src_seq):
         src_mask = None
